@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Moserware.AesIllustrated</RootNamespace>
+    <AssemblyName>AesIllustrated</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aes.cs" />
+    <Compile Include="ByteUtilities.cs" />
+    <Compile Include="Debugging.cs" />
+    <Compile Include="RandomizedCapiTests.cs" />
+    <Compile Include="NistKnownAnswerTestFileParser.cs" />
+    <Compile Include="NistKnownAnswerTestVectors.cs" />
+    <Compile Include="PaddingUtilities.cs" />
+    <Compile Include="ProjectPaths.cs" />
+    <Compile Include="Rijndael.cs" />
+    <Compile Include="Transforms\RijndaelDecryptionCbcTransform.cs" />
+    <Compile Include="Transforms\RijndaelDecryptionCfbTransform.cs" />
+    <Compile Include="Transforms\RijndaelDecryptionEcbTransform.cs" />
+    <Compile Include="Transforms\RijndaelDecryptionTransform.cs" />
+    <Compile Include="Transforms\RijndaelDecryptionTransformFactory.cs" />
+    <Compile Include="Transforms\RijndaelEncryptionCbcTransform.cs" />
+    <Compile Include="Transforms\RijndaelEncryptionCfbTransform.cs" />
+    <Compile Include="Transforms\RijndaelEncryptionEcbTransform.cs" />
+    <Compile Include="Transforms\RijndaelOfbTransform.cs" />
+    <Compile Include="Transforms\RijndaelTransform.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="ByteMatrix.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="FiniteFieldMath.cs" />
+    <Compile Include="KeySchedule.cs" />
+    <Compile Include="Layers\AddRoundKey.cs" />
+    <Compile Include="Layers\Layer.cs" />
+    <Compile Include="Layers\MixColumns.cs" />
+    <Compile Include="Layers\ShiftRows.cs" />
+    <Compile Include="Layers\SubBytes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rounds\FinalRound.cs" />
+    <Compile Include="Rounds\InitialRound.cs" />
+    <Compile Include="Rounds\IntermediateRound.cs" />
+    <Compile Include="Rounds\Round.cs" />
+    <Compile Include="State.cs" />
+    <Compile Include="SubstitutionBox.cs" />
+    <Compile Include="Transforms\RijndaelEncryptionTransformFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="License.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCGFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCKeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CBCVarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128GFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128KeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB128VarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1GFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1KeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB1VarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8GFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8KeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\CFB8VarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBGFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBKeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\ECBVarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBGFSbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBKeySbox256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarKey256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt128d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt128e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt192d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt192e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt256d.txt" />
+    <Content Include="NIST Known Answer Test Vectors\OFBVarTxt256e.txt" />
+    <Content Include="NIST Known Answer Test Vectors\Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

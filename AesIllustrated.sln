@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AesIllustrated", "AesIllustrated.csproj", "{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968A2F7B-C325-4631-B21D-0B7F5DE55FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
