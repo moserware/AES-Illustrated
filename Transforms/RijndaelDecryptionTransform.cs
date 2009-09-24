@@ -1,9 +1,5 @@
-﻿
-
-using System;
+﻿using System;
 using System.Security.Cryptography;
-
-
 
 namespace Moserware.AesIllustrated.Transforms
 {

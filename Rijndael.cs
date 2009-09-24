@@ -62,7 +62,6 @@ namespace Moserware.AesIllustrated
             set
             {
                 int blockByteCount = BlockSize/Constants.BitsPerByte;
-                int blockColumnCount = blockByteCount/Constants.StateRows;
 
                 if (((BlockSize%Constants.BitsPerByte) != 0) || ((blockByteCount%Constants.StateRows) != 0))
                 {

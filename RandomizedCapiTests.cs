@@ -11,7 +11,7 @@ namespace Moserware.AesIllustrated
 
         private static readonly CipherMode[] _ValidCipherModes = new[]
                                                                      {
-                                                                         CipherMode.ECB, CipherMode.CBC, CipherMode.CFB                                                                         
+                                                                         CipherMode.ECB, CipherMode.CBC, CipherMode.CFB
                                                                      };
 
         private static readonly PaddingMode[] _ValidPaddingModes = new[] {PaddingMode.ANSIX923, PaddingMode.PKCS7};
@@ -64,9 +64,6 @@ namespace Moserware.AesIllustrated
         private static byte[] PerformRandomizedTest(ICryptoTransform expectedTransform, ICryptoTransform actualTransform,
                                                     byte[] vector)
         {
-            byte[] expectedTransformResult;
-            byte[] actualTransformResult;
-
             using (var msExpected = new MemoryStream())
             using (var msActual = new MemoryStream())
             {
@@ -76,7 +73,7 @@ namespace Moserware.AesIllustrated
                     byte[] bufferToTransform = vector;
                     if (bufferToTransform == null)
                     {
-                        int randomBytesToGenerate = 15; // _WeakRandom.Next(0, MaxEncryptedSizeInBytes);
+                        int randomBytesToGenerate = _WeakRandom.Next(0, MaxEncryptedSizeInBytes);
                         bufferToTransform = new byte[randomBytesToGenerate];
                         _WeakRandom.NextBytes(bufferToTransform);
                     }
@@ -84,8 +81,8 @@ namespace Moserware.AesIllustrated
                     csActual.Write(bufferToTransform, 0, bufferToTransform.Length);
                 }
 
-                expectedTransformResult = msExpected.ToArray();
-                actualTransformResult = msActual.ToArray();
+                byte[] expectedTransformResult = msExpected.ToArray();
+                byte[] actualTransformResult = msActual.ToArray();
 
                 ByteUtilities.AssertBytesEqual(expectedTransformResult, actualTransformResult);
 

@@ -13,11 +13,11 @@ namespace Moserware.AesIllustrated
     /// </remarks>
     internal static class FiniteFieldMath
     {
-        public static byte[] _AntiLogTable;
-        public static byte[] _FTable;
-        public static byte[] _GTable;
-        public static byte[] _InvFTable;
-        public static byte[] _LogTable;
+        private static byte[] _AntiLogTable;
+        private static byte[] _FTable;
+        private static byte[] _GTable;
+        private static byte[] _InvFTable; // Technically this isn't needed since we compute the s-box inverse without needing it.
+        private static byte[] _LogTable;
 
         /// <summary>
         /// Calculates x * b(x) mod m(x) where b(x) is represented by <paramref name="b"/> and

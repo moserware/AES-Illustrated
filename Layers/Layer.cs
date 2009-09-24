@@ -1,5 +1,4 @@
-﻿
-namespace Moserware.AesIllustrated.Layers
+﻿namespace Moserware.AesIllustrated.Layers
 {
     /// <summary>
     /// Represents a single round operation (aka "layer")

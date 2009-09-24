@@ -1,5 +1,4 @@
-﻿
-namespace Moserware.AesIllustrated
+﻿namespace Moserware.AesIllustrated
 {
     /// <summary>
     /// Provides a non-linear substitution for bytes.

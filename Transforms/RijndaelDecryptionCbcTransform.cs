@@ -29,7 +29,8 @@ namespace Moserware.AesIllustrated.Transforms
                 plaintext[i] = (byte) (_LastVector[i] ^ plaintext[i]);
             }
 
-            Buffer.BlockCopy(plaintext, 0, _LastVector, 0, plaintext.Length);
+            // The input (ciphertext) becomes what is xor'd with the next block
+            Buffer.BlockCopy(input, 0, _LastVector, 0, input.Length);
             return plaintext;
         }
     }

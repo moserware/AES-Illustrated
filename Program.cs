@@ -34,8 +34,8 @@ namespace Moserware.AesIllustrated
             Console.WriteLine();
             Console.WriteLine("Some examples:");
 
-            byte left = 0x1B;
-            byte right = 0xAA;
+            const byte left = 0x1B;
+            const byte right = 0xAA;
 
             Console.WriteLine("({0}) * ({1}) = {2:X2} * {3:X2}", left.ToPolynomial(), right.ToPolynomial(), left, right);
 
@@ -53,7 +53,7 @@ namespace Moserware.AesIllustrated
 
             for (int i = 0; i < 0x10; i++)
             {
-                byte multiplier = 0x03; // (x+1)
+                const byte multiplier = 0x03;
                 byte newResult = FiniteFieldMath.Multiply(accumulator, multiplier);
                 Console.WriteLine(
                     "({0}) * ({1}) = {2} => {3:X2} * {4:X2} = {5:X2}",
@@ -89,7 +89,7 @@ namespace Moserware.AesIllustrated
             }
 
             Console.WriteLine();
-            Console.WriteLine("The actual sbox values is f(g(a)) where \"f\" is an affine transform");
+            Console.WriteLine("The actual s-box values is f(g(a)) where \"f\" is an affine transform");
             Console.WriteLine();
             Console.WriteLine("Some examples:");
             for(int i = 0; i < 5; i++)
@@ -104,10 +104,10 @@ namespace Moserware.AesIllustrated
         private static void ShowSBox()
         {
             WriteHeader("S-Boxes");
-            WriteBox("Rijndael S-Box (SRD[x]):", i => SubstitutionBox.Value(i));        
-            WriteBox("Rijndael Inverse S-Box (SRD^1[x]):", i => SubstitutionBox.Inverse(i));
+            WriteBox("Rijndael S-Box (SRD[x]):", SubstitutionBox.Value);        
+            WriteBox("Rijndael Inverse S-Box (SRD^1[x]):", SubstitutionBox.Inverse);
 
-            byte val = 0x42;
+            const byte val = 0x42;
             byte srdVal = SubstitutionBox.Value(val);
             byte srdInvVal = SubstitutionBox.Inverse(srdVal);
             Console.WriteLine("Notice how SRD[{0:X2}] = {1:X2} and SRD^-1[{1:X2}] = {2:X2}", val, srdVal, srdInvVal);
@@ -145,12 +145,12 @@ namespace Moserware.AesIllustrated
             using (Debugging.CreateDebuggingScope())
             {
                 // The debugging scope will show debug information for key setup and each round.
-                string plaintext = "ATTACK AT DAWN!";
+                const string plaintext = "ATTACK AT DAWN!";
                 byte[] plaintextBytes = Encoding.UTF8.GetBytes(plaintext);
                 byte[] paddedBytes = PaddingUtilities.ApplyPadding(PaddingMode.PKCS7, plaintextBytes,
                                                                    Constants.AesBlockSize / Constants.BitsPerByte);
 
-                string key = "SOME 128 BIT KEY";
+                const string key = "SOME 128 BIT KEY";
                 byte[] keyBytes = Encoding.UTF8.GetBytes(key);
 
                 Debugging.Trace("Encrypting \"{0}\" with the key \"{1}\"", plaintext, key);

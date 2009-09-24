@@ -3,3 +3,8 @@ C:\Users\Jeff\Documents\My Dropbox\git\AES-Illustrated\bin\Debug\AesIllustrated.
 C:\Users\Jeff\Documents\My Dropbox\git\AES-Illustrated\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Jeff\Documents\My Dropbox\git\AES-Illustrated\obj\Debug\AesIllustrated.exe
 C:\Users\Jeff\Documents\My Dropbox\git\AES-Illustrated\obj\Debug\AesIllustrated.pdb
+T:\My Dropbox\git\Aes-Illustrated\obj\Debug\AesIllustrated.exe
+T:\My Dropbox\git\Aes-Illustrated\obj\Debug\AesIllustrated.pdb
+T:\My Dropbox\git\Aes-Illustrated\bin\Debug\AesIllustrated.exe
+T:\My Dropbox\git\Aes-Illustrated\bin\Debug\AesIllustrated.pdb
+T:\My Dropbox\git\Aes-Illustrated\obj\Debug\ResolveAssemblyReference.cache
